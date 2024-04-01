@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Route Finder</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #a1c4fd 50%, #c2e9fb 50%);
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            min-height: 60vh; /* Ensure the container has a minimum height */
+            border-left: 2px solid #000;
+            padding: 20px;
+        }
+        .input-section, .result-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-section {
+            margin-right: 20px;
+        }
+        .result-box {
+            border: 1px solid #000;
+            margin: 10px; /* Adjust margin to ensure padding on each side */
+            padding: 20px; /* Increase padding for content inside */
+            width: 400px; /* Correctly setting width */
+            height: 400px; /* Correctly setting height */
+            overflow-y: auto;
+            display: none; /* Initially hidden */
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .logo {
+            position: absolute;
+            top: 10px; /* Adjusted to better position */
+            left: 10px; /* Adjusted to better position */
+            width: 100px; /* Size adjusted */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/HERE_logo.svg/1920px-HERE_logo.svg.png" alt="HERE Logo">
+    <div class="container">
+        <div class="input-section">
+            <div class="input-group">
+                <label for="startPoint">Start Point</label>
+                <input type="text" id="startPoint" placeholder="Enter start point (Area/House No./Locality)">
+            </div>
+            <div class="input-group">
+                <label for="destinationPoint">Destination</label>
+                <input type="text" id="destinationPoint" placeholder="Enter destination (Area/House No./Locality)">
+            </div>
+            <button onclick="findRoute()">Submit</button>
+        </div>
+        <div class="result-section">
+            <div class="result-box" id="routeDetails">Enter Details to get the Instructions</div>
+        </div>
+    </div>
+
+    <script src="routeFinder.js"></script>
+</body>
+</html>
